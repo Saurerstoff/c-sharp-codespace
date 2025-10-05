@@ -1,0 +1,18 @@
+{
+  "name": "C# Console App & Tests",
+  // Use the official Microsoft development container image for .NET 8.
+  "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+
+  "customizations": {
+    "vscode": {
+      // Pre-install the C# Dev Kit for a rich editing and testing experience.
+      "extensions": [
+        "ms-dotnettools.csdevkit"
+      ]
+    }
+  },
+
+  // Command to run after the container is created.
+  // This restores packages for *all* projects in the solution.
+  "postCreateCommand": "dotnet restore HelloWorld.sln"
+}
