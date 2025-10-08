@@ -21,7 +21,7 @@ namespace HelloWorldTests
                 HelloWorld.Program.Main();
 
                 var result = sw.ToString().Trim();
-                Assert.AreEqual(Expected, result);
+                Assert.That(result, Is.EqualTo(Expected));
             }
         }
     }
