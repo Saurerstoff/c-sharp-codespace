@@ -45,5 +45,19 @@ namespace HelloWorldTests
         {
             Assert.True(conway.GetNextState(false, 3));
         }
+
+        [Test]
+        public void CheckIfOneNeighbor()
+        {
+            bool[,] board = new bool[4, 4]
+            {
+                {false, true, false,false},
+                {false, false,false,false},
+                {false, false,false,false},
+                {false, false,false,false}
+            };
+            conway.board = board;
+            Assert.AreEqual(1, conway.GetAliveNeighboursCount(1, 1));
+        }
     }
 }
