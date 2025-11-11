@@ -6,7 +6,15 @@ namespace HelloWorld
     {
         public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("■◻");
+        }
+    }
+
+    public class Conway
+    {
+        public bool GetNextState(bool isCurrentAlive, int aliveCount)
+        {
+            return aliveCount == 3 || (aliveCount == 2 && isCurrentAlive);
         }
     }
 }

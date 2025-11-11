@@ -1,28 +1,26 @@
 using NUnit.Framework;
 using System.IO;
 using System;
+using HelloWorld;
 
 namespace HelloWorldTests
 {
     public class Tests
     {
         private const string Expected = "Hello World!";
+        private Conway conway;
 
         [SetUp]
         public void Setup()
         {
+            conway = new Conway();
         }
-        [Test]
-        public void TestMethod1()
-        {
-            using (var sw = new StringWriter())
-            {
-                Console.SetOut(sw);
-                HelloWorld.Program.Main();
 
-                var result = sw.ToString().Trim();
-                Assert.That(result, Is.EqualTo(Expected));
-            }
+        [Test]
+        public void DiesSmaller2()
+        {
+            Assert.False(conway.GetNextState(true, 0));
+            Assert.False(conway.GetNextState(true, 1));
         }
     }
 }
