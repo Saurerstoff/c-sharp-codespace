@@ -22,5 +22,19 @@ namespace HelloWorldTests
             Assert.False(conway.GetNextState(true, 0));
             Assert.False(conway.GetNextState(true, 1));
         }
+
+        [Test]
+        public void StaysAlive()
+        {
+            Assert.True(conway.GetNextState(true, 2));
+            Assert.True(conway.GetNextState(true, 3));
+        }
+
+        [Test]
+        public void DieOvercrowding()
+        {
+            Assert.False(conway.GetNextState(true, 2));
+            Assert.False(conway.GetNextState(true, 3));
+        }
     }
 }
