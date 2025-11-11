@@ -33,8 +33,17 @@ namespace HelloWorldTests
         [Test]
         public void DieOvercrowding()
         {
-            Assert.False(conway.GetNextState(true, 2));
-            Assert.False(conway.GetNextState(true, 3));
+            Assert.False(conway.GetNextState(true, 4));
+            Assert.False(conway.GetNextState(true, 5));
+            Assert.False(conway.GetNextState(true, 6));
+            Assert.False(conway.GetNextState(true, 7));
+            Assert.False(conway.GetNextState(true, 8));
+        }
+
+        [Test]
+        public void Reproduction()
+        {
+            Assert.True(conway.GetNextState(false, 3));
         }
     }
 }
